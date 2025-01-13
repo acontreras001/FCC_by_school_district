@@ -30,9 +30,12 @@ def pad_column_values(data, column_name, target_length, pad_char='0'):
         invalid_rows = data[data[column_name].str.len() != target_length]
         if not invalid_rows.empty:
             print(f"Warning: The following rows have '{column_name}' values that are not {target_length} characters long:\n{invalid_rows}")
+            print()
         else:
             print(f"All '{column_name}' values are now exactly {target_length} characters long.")
+            print()
     else:
         print(f"The column '{column_name}' does not exist in the data.")
+        print()
 
     return data
